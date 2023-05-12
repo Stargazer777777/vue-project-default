@@ -2,4 +2,6 @@
   <RouterView />
 </template>
 
-<style></style>
+<style lang="scss">
+@import 'scss/base.scss';
+</style>

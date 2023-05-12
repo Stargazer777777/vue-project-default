@@ -27,3 +27,7 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+.env.production
+components.d.ts
+auto-imports.d.ts
