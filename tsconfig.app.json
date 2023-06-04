@@ -7,6 +7,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "moduleResolution": "node", // I add this line because the extended file support bundler moduleResolution, but element plus doesn't support
   }
 }
