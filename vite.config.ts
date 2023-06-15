@@ -9,15 +9,15 @@ export default defineConfig({
   plugins: [vue(), vueJsx()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-    },
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
   },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "./src/scss/_index.scss";`,
-      },
-    },
+        additionalData: '@import "./src/scss/_index.scss";'
+      }
+    }
   },
   server: {
     proxy: {
@@ -27,8 +27,8 @@ export default defineConfig({
         changeOrigin: true, // 允许跨域,
         ws: true, // 允许websocket代理
         // 重写路径 --> 作用与vue配置pathRewrite作用相同
-        rewrite: (path) => path.replace(/^\/api/, ''),
-      },
-    },
-  },
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
+  }
 });
