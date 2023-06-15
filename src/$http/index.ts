@@ -11,7 +11,11 @@ export type BkResponse = {
 
 httpInstance.defaults.baseURL = import.meta.env.VITE_BASEURL;
 
-export const $http = async (config: AxiosRequestConfig) => {
+export interface HttpOption {
+  noAlert?: true;
+}
+
+export const $http = async (config: AxiosRequestConfig, httpOption: HttpOption) => {
   try {
     const axiosResponse = await httpInstance<BkResponse>(config);
     const bkResponse = axiosResponse.data;
@@ -29,7 +33,9 @@ export const $http = async (config: AxiosRequestConfig) => {
       } else {
         errTitle = 'Unknown';
       }
-      alert(errTitle);
+      if (!httpOption.noAlert) {
+        alert(`${errTitle}: ${bkResponse.msg || 'unknown'}`);
+      }
       const err = new Error(bkResponse?.msg || 'Unknown');
       err.name = errTitle;
       throw err;
