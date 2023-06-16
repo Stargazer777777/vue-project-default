@@ -25,7 +25,6 @@ export default defineConfig({
         VantResolver(),
         HeadlessUiResolver()
       ],
-      dirs: ['src/components', 'src/views'],
       extensions: ['vue'],
       dts: 'src/components.d.ts'
     })
