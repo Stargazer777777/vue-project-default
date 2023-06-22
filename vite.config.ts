@@ -52,5 +52,12 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
+  },
+  build: {
+    chunkSizeWarningLimit: 2000, // 打包后体积大于多少kb发出警告
+    cssCodeSplit: true, // 是否启用css代码拆分，禁用将把css打包在一个文件里面
+    sourcemap: false, // 是否生成sourcemap
+    minify: 'terser', // esbuild速度快，terser体积小，使用terser需要先安装
+    assetsInlineLimit: 4000 // 图片小于多少kb时转成base64
   }
 });
