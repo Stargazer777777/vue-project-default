@@ -28,6 +28,5 @@ coverage
 *.sln
 *.sw?
 
-.env.production
 components.d.ts
 auto-imports.d.ts
