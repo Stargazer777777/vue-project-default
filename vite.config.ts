@@ -26,7 +26,7 @@ export default defineConfig({
         HeadlessUiResolver()
       ],
       extensions: ['vue'],
-      dts: 'src/components.d.ts'
+      dts: 'src/dts/components.d.ts'
     })
   ],
   resolve: {
