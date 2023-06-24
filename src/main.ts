@@ -1,12 +1,16 @@
 import { createApp } from 'vue';
-
 import App from './App.vue';
-import router from './router';
-import store from '@/stores/index';
-
 const app = createApp(App);
 
-app.use(store);
-app.use(router);
+import './scss/base.scss';
 
-app.mount('#app');
+const asyncRegister = async () => {
+  const { default: store } = await import('./stores/index');
+  app.use(store);
+
+  const { default: router } = await import('./router/index');
+  app.use(router);
+
+  app.mount('#app');
+};
+asyncRegister();
